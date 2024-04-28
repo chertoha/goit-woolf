@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color switcher</title>
+    <link rel="stylesheet" href="css/common.css" />
+
+    <style>
+      .buttonWrapper {
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+      }
+
+      .buttonWrapper button {
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: #ffffff;
+        color: #000000;
+        text-transform: uppercase;
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        transition: color 250ms ease, border-color 250ms ease;
+      }
+
+      .buttonWrapper button:disabled {
+        cursor: default;
+        color: rgba(0, 0, 0, 0.3);
+      }
+
+      .buttonWrapper button:not(:disabled):hover {
+        border-color: tomato;
+        color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <p><a href="index.html">Go back</a></p>
+
+    <div class="buttonWrapper">
+      <button type="button" data-start>Start</button>
+      <button type="button" data-stop>Stop</button>
+    </div>
+
+    <script src="js/01-color-switcher.js" type="module"></script>
+  </body>
+</html>

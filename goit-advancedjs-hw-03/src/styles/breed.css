@@ -1,0 +1,30 @@
+.cat-info {
+  margin-top: 40px;
+  display: flex;
+  column-gap: 30px;
+}
+
+.cat-info img {
+  display: block;
+  width: 40%;
+  height: auto;
+}
+
+.cat-info h1 {
+  margin-bottom: 20px;
+}
+
+.cat-info p {
+  margin-bottom: 20px;
+}
+
+.cat-info.hidden,
+.error.hidden,
+.loader.hidden,
+.breed-select.hidden {
+  display: none;
+}
+
+#breed-select ~ div {
+  width: 30%;
+}

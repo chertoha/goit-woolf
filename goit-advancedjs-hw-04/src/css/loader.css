@@ -1,0 +1,34 @@
+.loader {
+  display: none;
+
+  position: fixed;
+  z-index: 999;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.loader::after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  border: 5px solid rgba(48, 40, 199, 0.7);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader.visible {
+  display: block;
+}

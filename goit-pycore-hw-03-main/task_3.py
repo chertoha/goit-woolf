@@ -1,0 +1,33 @@
+import re
+
+def normalize_phone(phone_number):
+    normalized = re.sub(r'[^0-9+]', "", phone_number.strip())
+    
+    if normalized.startswith("380"):
+        normalized = "+" + normalized 
+    elif not normalized.startswith("+"):
+        normalized = "+38" + normalized    
+
+    return  normalized 
+
+
+
+raw_numbers = [
+    "067\\t123 4567",
+    "(095) 234-5678\\n",
+    "+380 44 123 4567",
+    "380501234567",
+    "    +38(050)123-32-34",
+    "     0503451234",
+    "(050)8889900",
+    "38050-111-22-22",
+    "38050 111 22 11   ",
+    "+35350 111 22 11   ",
+]
+
+
+res = []
+for number in raw_numbers:
+    res.append(normalize_phone(number));
+
+print(res)

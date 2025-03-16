@@ -1,0 +1,22 @@
+{% include 'head.html' %}
+
+{% include 'header.html' %}
+<div class="container mt-3">
+    <main class="form-signin w-50 m-auto">
+        <h1 class="h3 mb-3 fw-normal">Messages</h1>
+
+        <ul class="list-group">
+            {% for timestamp, message in messages.items() %}
+            <li class="list-group-item shadow-sm mb-3">
+                <div class="d-flex justify-content-between">
+                    <strong>{{ message.username }}</strong>
+                    <span class="text-muted">{{ timestamp }}</span>
+                </div>
+                <p class="mt-2">{{ message.message }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+</div>
+</body>
+</html>

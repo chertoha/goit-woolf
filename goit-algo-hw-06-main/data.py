@@ -1,0 +1,53 @@
+stations = [
+    "Central Station",
+    "North District",
+    "South District",
+    "East District",
+    "West District",
+    "Airport",
+    "University",
+    "Industrial Zone",
+    "Harbor",
+    "Intermediary 1",
+    "Intermediary 2",
+    "Intermediary 3",
+    "Intermediary 4",
+]
+
+edges = [
+    ("Central Station", "North District"),
+    ("Central Station", "South District"),
+    ("Central Station", "East District"),
+    ("Central Station", "West District"),
+    ("North District", "Intermediary 1"),
+    ("Intermediary 1", "Intermediary 3"),
+    ("Intermediary 3", "Airport"),
+    ("South District", "Intermediary 2"),
+    ("Intermediary 2", "Intermediary 4"),
+    ("Intermediary 4", "Airport"),
+    ("East District", "University"),
+    ("West District", "Harbor"),
+    ("Airport", "Central Station"),
+    ("Industrial Zone", "Central Station"),
+    ("University", "Central Station"),
+    ("Harbor", "Central Station"),
+    ("Airport", "University"),
+    ("Harbor", "Industrial Zone"),
+]
+
+
+graph = {
+    "Central Station": [("North District", 1), ("South District", 1), ("East District", 1), ("West District", 1), ("Airport", 3), ("Industrial Zone", 2)],
+    "North District": [("Intermediary 1", 1)],
+    "Intermediary 1": [("Intermediary 3", 1)],
+    "Intermediary 3": [("Airport", 2)],
+    "South District": [("Intermediary 2", 1)],
+    "Intermediary 2": [("Intermediary 4", 1)],
+    "Intermediary 4": [("Airport", 2)],
+    "East District": [("University", 2)],
+    "West District": [("Harbor", 2)],
+    "Airport": [("Central Station", 3), ("University", 1)],
+    "Industrial Zone": [("Central Station", 2)],
+    "University": [("Central Station", 1)],
+    "Harbor": [("Central Station", 2), ("Industrial Zone", 1)],
+}

@@ -1,0 +1,76 @@
+[
+  {
+    "title": "WeekendWorkout",
+    "text": "Detailed workout routine for strength and endurance.",
+    "tags": ["fitness", "routine", "workout", "strength"]
+  },
+  {
+    "title": "HealthyHabits",
+    "text": "Track daily habits: water intake, steps, and mindfulness.",
+    "tags": ["habits", "daily", "health"]
+  },
+  {
+    "title": "WeekendEscape",
+    "text": "Ideas for a relaxing weekend: movies, hiking, and reading."
+  },
+  {
+    "title": "TeamMeeting",
+    "text": "Outline of topics for next week's meeting.",
+    "tags": ["meeting", "agenda", "work"]
+  },
+  {
+    "title": "VacationPacking",
+    "text": "Packing list and essentials for the upcoming holiday.",
+    "tags": ["travel", "holiday", "checklist"]
+  },
+  {
+    "title": "PersonalGrowth",
+    "text": "Books, podcasts, and courses for personal growth.",
+    "tags": ["self-improvement", "learning", "growth"]
+  },
+  {
+    "title": "WebSnippets",
+    "text": "A collection of useful code snippets for web development.",
+    "tags": ["code", "snippets", "development", "web"]
+  },
+  {
+    "title": "GroceryPlanner",
+    "text": "Monthly budget for groceries and household items.",
+    "tags": ["shopping", "budget", "groceries"]
+  },
+  {
+    "title": "BirthdayAlerts",
+    "text": "Reminder to send birthday wishes to friends and family.",
+    "tags": ["birthday", "reminder", "family"]
+  },
+  {
+    "title": "FamilyRecipes",
+    "text": "A collection of family recipes for special occasions.",
+    "tags": ["cooking", "recipes", "family"]
+  },
+  {
+    "title": "EveningRoutine",
+    "text": "Detailed workout routine for evening relaxation.",
+    "tags": ["routine", "workout", "relaxation"]
+  },
+  {
+    "title": "MindfulMornings",
+    "text": "Morning routine for mindfulness and positivity.",
+    "tags": ["mindfulness", "morning", "habits"]
+  },
+  {
+    "title": "OutdoorPlans",
+    "text": "Plan for outdoor activities during the weekend.",
+    "tags": ["outdoors", "weekend", "adventure"]
+  },
+  {
+    "title": "OfficeAgenda",
+    "text": "Meeting agenda for the office discussion next week.",
+    "tags": ["office", "agenda", "meeting"]
+  },
+  {
+    "title": "TravelChecklist",
+    "text": "Essential travel checklist for vacations.",
+    "tags": ["travel", "checklist", "packing"]
+  }
+]

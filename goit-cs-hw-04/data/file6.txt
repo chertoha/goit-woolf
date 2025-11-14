@@ -1,0 +1,1 @@
+Threading is more efficient for IO-bound tasks while multiprocessing is better for CPU-bound tasks.

@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    command: python3 main.py
+    ports:
+      - "3000:3000"
+    depends_on:
+      - socket
+    volumes:
+      - .:/app
+    restart: always
+
+  socket:
+    build: .
+    command: python3 socket_server.py
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/app
+    expose:
+      - "5000"
+    restart: always
+
+  mongodb:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    restart: always
+
+volumes:
+  mongo-data:

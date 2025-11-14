@@ -1,0 +1,21 @@
+{
+  "name": "creation-patterns-examples",
+  "version": "1.0.0",
+  "description": "Design patterns examples",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "builder": "ts-node src/builder/main.ts",
+    "prototype": "ts-node src/prototype/main.ts",
+    "singleton": "ts-node src/singleton/main.ts",
+    "dev": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.0.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,2 @@
+Using the multiprocessing module, you can create separate processes in Python.
+Each process runs in its own memory space.

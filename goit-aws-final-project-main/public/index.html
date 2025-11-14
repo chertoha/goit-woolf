@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Посты</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+      }
+      form {
+        margin-bottom: 2rem;
+      }
+      input,
+      textarea {
+        display: block;
+        margin-bottom: 1rem;
+        width: 100%;
+        max-width: 400px;
+      }
+      .post {
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Add post</h1>
+    <form id="postForm">
+      <input
+        type="text"
+        id="user"
+        placeholder="Your name"
+        required
+      />
+      <textarea
+        id="text"
+        placeholder="Your text"
+        required
+      ></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <h2>All posts</h2>
+    <div id="posts"></div>
+
+    <script>
+      const form = document.getElementById("postForm");
+      const postsContainer = document.getElementById("posts");
+
+      async function loadPosts() {
+        const res = await fetch("/posts");
+        const posts = await res.json();
+        postsContainer.innerHTML = posts
+          .map(
+            post => `
+        <div class="post">
+          <strong>${post.user}</strong><br/>
+          ${post.text}
+        </div>
+      `
+          )
+          .join("");
+      }
+
+      form.addEventListener("submit", async e => {
+        e.preventDefault();
+        const user = document.getElementById("user").value.trim();
+        const text = document.getElementById("text").value.trim();
+        if (!user || !text) return;
+
+        await fetch("/posts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ user, text }),
+        });
+
+        form.reset();
+        await loadPosts();
+      });
+
+      loadPosts();
+    </script>
+  </body>
+</html>

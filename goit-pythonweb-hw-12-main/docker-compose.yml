@@ -1,0 +1,66 @@
+version: '3'
+
+services:
+  postgres_db:
+    image: postgres:12
+    container_name: postgres_python_web_dev_final
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+
+  redis:
+    image: redis:latest
+    container_name: redis_python_web_dev_final
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+
+  app:
+    build: .
+    container_name: app_python_web_dev_final
+    ports:
+      - "8000:8000"
+
+    environment:
+      - DB_URL=postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres_db:5432/contacts_db
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_ALGORITHM=${JWT_ALGORITHM}
+      - JWT_EXPIRATION_SECONDS=${JWT_EXPIRATION_SECONDS}
+      - MAIL_USERNAME=${MAIL_USERNAME}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+      - MAIL_FROM=${MAIL_FROM}
+      - MAIL_PORT=${MAIL_PORT}
+      - MAIL_SERVER=${MAIL_SERVER}
+      - CLD_NAME=${CLD_NAME}
+      - CLD_API_KEY=${CLD_API_KEY}
+      - CLD_API_SECRET=${CLD_API_SECRET}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+    networks:
+      - app-network
+    depends_on:
+      - postgres_db
+      - redis
+
+networks:
+  app-network:
+    driver: bridge
+    name: app-network
+
+
+volumes:
+  postgres_data:

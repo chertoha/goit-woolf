@@ -1,0 +1,1 @@
+Processes in operating systems allow parallel execution and better CPU utilization.
